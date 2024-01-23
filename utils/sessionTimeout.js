@@ -15,7 +15,7 @@ const sessionTimeout = (req, res, next) => {
   
       // Destroy the session if the user is idle for too long
       req.session.destroy(() => {
-        res.redirect('/login');
+        res.redirect('/signin');
       });
     } else {
       // If not authenticated or session is undefined, proceed to the next middleware

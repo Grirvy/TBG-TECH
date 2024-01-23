@@ -1,9 +1,14 @@
-
-{{#each posts}}
-  <div>
-    <h3>{{title}}</h3>
-    <p>{{content}}</p>
-    <p>Date Created: {{createdAt}}</p>
-    <a href="/posts/{{id}}">Read More</a>
-  </div>
-{{/each}}
+{{#if loggedIn}}
+  <!-- Display blog posts -->
+  {{#each posts}}
+    <div>
+      <h2>{{title}}</h2>
+      <p>{{content}}</p>
+      <p>Created by: {{creatorUsername}}</p>
+      <p>Date created: {{createdAt}}</p>
+    </div>
+  {{/each}}
+{{else}}
+  <!-- Render a login form or message -->
+  <p>Please log in to view blog posts.</p>
+{{/if}}

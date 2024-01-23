@@ -1,0 +1,9 @@
+{{#if loggedIn}}
+  <a href="/">Homepage</a>
+  <a href="/dashboard">Dashboard</a>
+  <a href="/logout">Log Out</a>
+{{else}}
+  <!-- Include links for sign-up and sign-in when not logged in -->
+  <a href="/signup">Sign Up</a>
+  <a href="/signin">Sign In</a>
+{{/if}}

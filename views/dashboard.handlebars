@@ -1,0 +1,15 @@
+{{> main}}
+
+<div>
+  <h2>Your Dashboard</h2>
+  <ul>
+    {{#each userPosts}}
+      <li>
+        {{this.title}}
+        <a href="/posts/{{this.id}}">View</a>
+        <a href="/posts/{{this.id}}/update">Update</a>
+        <a href="/posts/{{this.id}}/delete">Delete</a>
+      </li>
+    {{/each}}
+  </ul>
+</div>

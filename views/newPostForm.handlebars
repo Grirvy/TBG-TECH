@@ -1,0 +1,15 @@
+{{#if loggedIn}}
+  <h2>Add New Blog Post</h2>
+
+  <form action="/posts" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="contents">Contents:</label>
+    <textarea name="contents" id="contents" rows="5" required></textarea>
+
+    <button type="submit">Create Blog Post</button>
+  </form>
+{{else}}
+  <p>You must be logged in to add a new blog post.</p>
+{{/if}}

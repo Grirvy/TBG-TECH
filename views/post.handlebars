@@ -1,0 +1,26 @@
+{{#if post}}
+  <h2>{{post.title}}</h2>
+  <p>{{post.content}}</p>
+  <p>Creator: {{post.User.username}}</p>
+  <p>Date Created: {{post.createdAt}}</p>
+
+  {{#if loggedIn}}
+    <!-- Form for leaving a comment -->
+    <form action="/posts/{{post.id}}/comment" method="POST">
+      <label for="comment">Leave a Comment:</label>
+      <textarea name="content" id="comment" rows="3" required></textarea>
+      <button type="submit">Submit Comment</button>
+    </form>
+
+    <!-- Display existing comments -->
+    {{#each post.Comments}}
+      <div>
+        <p>{{content}}</p>
+        <p>Comment by: {{User.username}}</p>
+        <p>Date Created: {{createdAt}}</p>
+      </div>
+    {{/each}}
+  {{/if}}
+{{else}}
+  <p>Post not found.</p>
+{{/if}}

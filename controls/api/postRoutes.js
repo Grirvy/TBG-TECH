@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { displayPost, updatePost, deletePost, displayDashboard } = require('..//postController');
+const { displayPost, updatePost, deletePost, displayDashboard } = require('../postController');
 
 // Route to display a single blog post
 router.get('/:postId', displayPost);
